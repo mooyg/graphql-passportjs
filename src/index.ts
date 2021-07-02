@@ -25,8 +25,8 @@ const main = async () => {
       store: new RedisStore({
         client: redis as any,
       }),
-      name: "qid",
-      secret: "shsaudasiua",
+      name: "somename",
+      secret: "somesecret",
       resave: false,
       saveUninitialized: false,
       cookie: {
@@ -47,7 +47,7 @@ const main = async () => {
 
   app.get("/", (req, res) => {
     console.log(req.user);
-    res.send("hm didn't worked");
+    res.send("didn't worked");
   });
   app.get("/logout", (req, res) => {
     req.logout();
